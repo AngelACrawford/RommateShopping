@@ -13,8 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RommateShopping"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity"
+        <!-- Main Activity => Login and Register -->
+        <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +22,53 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <!-- Navigation Activity => Roommates List, Shopping List, Purchased View, Cash Out -->
+        <activity android:name=".MainNavigationActivity" />
+        <activity
+            android:name=".ShoppingList"
+            android:parentActivityName=".MainNavigationActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainNavigationActivity" />
+        </activity>
+        <activity
+            android:name=".RoommateViewActivity"
+            android:parentActivityName=".MainNavigationActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainNavigationActivity" />
+        </activity>
+
+        <activity
+            android:name=".PaymentsListActivity"
+            android:parentActivityName=".MainNavigationActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainNavigationActivity" />
+        </activity>
+        <activity
+            android:name=".PurchasedList"
+            android:parentActivityName=".MainNavigationActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainNavigationActivity" />
+        </activity>
+
     </application>
 
 </manifest>
